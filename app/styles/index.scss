@@ -1,1 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
+body {
+  background-color: powderblue;
+  color: brown;
+  text-align: center;
+}
+h1 {
+  color: rgb(236, 44, 208);
+}
+p {
+  color: red;
+}
+form{
+  color: green;
+  background-blend-mode: darken;
+}
