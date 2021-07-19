@@ -1,4 +1,4 @@
-// const config = require("../config");
+const config = require("../config");
 const store = require('../store')
 
 const signUp = function (data) {
