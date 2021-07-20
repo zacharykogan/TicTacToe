@@ -9,39 +9,91 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <div class = "anonymous">
-      <p id="message"></p>
       <h1>Tic Tac Toe</h1>
       <br>
       <div class="new_user">
       <form id = "sign-up">
-        <label>NEW USER</label>
+        <label>Register</label>
         <input name="credentials[email]" type="text">
         <input name="credentials[password]" type="password">
         <input name="credentials[password_confirmation]" type="password">
         <input type="submit" value="Sign Up">
-      </div>
       </form>
+      </div>
       <br>
       <div class="returning_user">
       <form id="sign-in">
-        <label>RETURNING USER</label>
+        <label>Sign In</label>
         <input name="credentials[email]" type="text">
         <input name="credentials[password]" type="password">
         <input type="submit" value="Sign In">
       </form>
     </div>
+    <p id="message"></p>
       <br>
-    <div class="signed_in_user">
-      <button id="sign-out" type="button"> Sign Out</button>
-      <br>
-      <br>
-      <button>
-        <label>NEW GAME</label>
-      <br>
-      </button>
+    <div id="signed_in_user">
+      <button id="sign-out" type="button">Sign Out</button>
       <br>
       <br>
-    </body>
-  </div>
+    <button id="new-game">NEW GAME</button>
+    
+    <br/>
+    <br/>
+    <section class='container'>
+    <div id="game-board" class='row h-100 board'>
+      <div class="cells-row ">
+        <div id="cell0" class="cell"><button data-cell-index="0"></button></div>
+        <div id="cell1" class="cell"><button data-cell-index="1"></button></div>
+        <div id="cell2" class="cell"><button data-cell-index="2"></button></div> 
+      </div>
+      <div class="cells-row">
+        <div id="cell3" class="cell"><button data-cell-index="3"></button></div>
+        <div id="cell4" class="cell"><button data-cell-index="4"></button></div>
+        <div id="cell5" class="cell"><button data-cell-index="5"></button></div> 
+      </div>
+      <div class="cells-row">
+        <div id="cell6" class="cell"><button data-cell-index="6"></button></div>
+        <div id="cell7" class="cell"><button data-cell-index="7"></button></div>
+        <div id="cell8" class="cell"><button data-cell-index="8"></button></div> 
+      </div>
+    </div>
+    </div>  
+    </section>
+
+    <!-- <div id="game-board">
+      <div class="cells-row">
+        <div class="cell" data-cell-index="0"><button></button></div>
+        <div class="cell" data-cell-index="1"><button></button></div>
+        <div class="cell" data-cell-index="2"><button></button></div> 
+      </div>
+      <div class="cells-row">
+        <div class="cell" data-cell-index="3"><button></button></div>
+        <div class="cell" data-cell-index="4"><button></button></div>
+        <div class="cell" data-cell-index="5"><button></button></div> 
+      </div>
+      <div class="cells-row">
+        <div class="cell" data-cell-index="6"><button></button></div>
+        <div class="cell" data-cell-index="7"><button></button></div>
+        <div class="cell" data-cell-index="8"><button></button></div> 
+      </div>
+    </div> -->
+
+ 
+  <section class='container'>
+    <div class='row h-100 board'>
+      <div class="col-4 box"></div>
+      <div class="col-4 box"></div>
+      <div class="col-4 box"></div>
+
+      <div class="col-4 box"></div>
+      <div class="col-4 box"></div>
+      <div class="col-4 box"></div>
+
+      <div class="col-4 box"></div>
+      <div class="col-4 box"></div>
+      <div class="col-4 box"></div>
+     </div>
+    </section>
+  </body>
+
 </html>
