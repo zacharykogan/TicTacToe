@@ -2,20 +2,20 @@
 
 const store = require('../store.js')
 
-const SignUpSuccess = function (data) {
-    $('#message').text("You've signed up!");
+const signUpSuccess = function (data) {
+    $('#message').text("You've signed up! Please sign in.");
     $('form').trigger('reset');
     $("div.new_user").hide();
 }
 
-const SignUpFailure = function (data) {
+const signUpFailure = function (data) {
     $('#message').text("Oops! Something went wrong. Please, try again.");
     $('form').trigger('reset')
 }
 
-const SignInSuccess = function (data) {
+const signInSuccess = function (data) {
     store.user = data.user
-    $('#message').text("You've signed in!");
+    $('#message').text("Click 'New Game' to play!");
     console.log(data);
     $("div.new_user").hide();
     $("div.returning_user").hide();
@@ -24,23 +24,30 @@ const SignInSuccess = function (data) {
     $('form').trigger('reset');
 }
 
-const SignInFailure = function (data) {
+const signInFailure = function (data) {
     $('#message').text("Try again.")    
 }
 
-const SignOutSuccess = function (data) {
+const signOutSuccess = function (data) {
     $('#message').text("You've signed out.");
     $("div.new_user").show();
     $("#signed_in_user").show();
     $("div.returning_user").show();
     $("#signed_in_user").hide();
+    $('#game-board').hide()
+}
+
+const newGameSuccess= function (data) {
+   console.log('NewGameSuccess')
+   $('#message').text("let's play")
 }
 
 const drawGameBoard = function (cells) {
     for (let i = 0; i < cells.length; i++) {
         $('#cell' + i + ' button').html(cells[i])
     }
-    $(`#message`).text("Let's play!")
+    // $(`#message`).text("Let's play!")
+    $('#game-board').show()
 }
 
 
@@ -61,11 +68,7 @@ const isBoardFull = function(lastPlayedCellIndex) {
     return true
 }
 
-const didGameEnd = function (lastPlayedCellIndex) {
-    if (isBoardFull(lastPlayedCellIndex)) {
-        return true
-    }
-
+const didAnyoneWin = function (lastPlayedCellIndex) {
     if (lastPlayedCellIndex === 0) {
         return isWin(1, 2) || isWin(3, 6) || isWin(4, 8) 
     }
@@ -96,18 +99,31 @@ const didGameEnd = function (lastPlayedCellIndex) {
    
 }
 
+const showTie =  function() {
+ $(`#message`).html("It's a Tie!")
+ $('#game-board').hide()
+//  alert("Tie Game")
+}
+
+const showWin =  function() {
+ $(`#message`).text("Game Over")
+//  alert("Game Over")
+}
+
 // const updateCell = function (cellIndex) {
 //     $('#cell' + cellIndex).html
 // }
 
 module.exports = {
-    SignUpSuccess,
-    SignUpFailure,
-    SignInSuccess,
-    SignInFailure,
-    SignOutSuccess,
+    signUpSuccess,
+    signUpFailure,
+    signInSuccess,
+    signInFailure,
+    signOutSuccess,
     drawGameBoard,
-    didGameEnd,
+    didAnyoneWin,
     isBoardFull,
-    isWin
+    showTie,
+    showWin,
+    newGameSuccess
 } 
