@@ -40,10 +40,15 @@ const signOutSuccess = function (data) {
 const newGameSuccess= function (data) {
    console.log('NewGameSuccess')
    $('#message').text("let's play")
+   accessAllCells().prop('disabled', false)
 }
 
 const accessCell = function (index) {
     return $('#cell' + index + ' button')
+}
+
+const accessAllCells = function() {
+    return $('div.cell button')
 }
 
 const drawGameBoard = function (cells) {
@@ -130,5 +135,6 @@ module.exports = {
     showTie,
     showWin,
     newGameSuccess,
-    accessCell
+    accessCell,
+    accessAllCells
 } 
