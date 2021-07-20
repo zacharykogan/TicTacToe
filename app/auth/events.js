@@ -45,6 +45,7 @@ const onPlay = function(event) {
   let cellIndex = $(event.target).data('cell-index')
   let tie = false
   let win = false
+  $('#cell' + cellIndex + ' button').prop('disabled', true);
   
   win = ui.didAnyoneWin(cellIndex)
   if (!win) {
