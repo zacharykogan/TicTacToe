@@ -8,7 +8,18 @@ const authEvents = require('./auth/events')
 // require('./example')
 
 $(() => {
+  $("#signed_in_user").hide();
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#sign-out').on('click', authEvents.onSignOut)
+  $('#new-game').on('click', authEvents.onNewGame)
+  $('div.cell button').on('click', authEvents.onPlay)
+  let currentPlayer = '✕'
+
+  // // Our box click event handler
+  const onBoxClick = (event) => {
+    console.log('click')}
+
+  //   // Select the box that was clicked, event.target
+    const box = $(event.target)
 })

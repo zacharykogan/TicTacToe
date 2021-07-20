@@ -17,3 +17,47 @@ form{
 // div.anonymous{
 // display: ;
 // }
+
+.cell {
+  background-color: white;
+  display: inline-block;
+}
+.cell button {
+  height: 50px;
+  width: 50px;
+}
+.container{
+  height: 100%vh;
+  width: 100%vh;
+  min-height: 300px;
+}
+.box {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  display: flex;
+  background-color: white;
+  background: transparent;
+
+&:nth-child(3n) {
+  border-right:0;
+}
+&:nth-last-child(-1n+3){
+  border-bottom: 0;
+}
+ max-height: calc(100%/3);
+ min-height: 50px;
+ max-width: calc(100%/3);
+}
+.board{
+  max-height: calc(100vh - 75px);
+  max-width: calc(100vh - 75px);
+  min-height: 30px;
+  min-width: 30px;
+  background: url('https://static.vecteezy.com/system/resources/thumbnails/000/245/981/small_2x/mountain-sunset-landscape-first-person-view-vector.jpg');
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
