@@ -41,6 +41,7 @@ const newGameSuccess= function (data) {
    console.log('NewGameSuccess')
    $('#message').text("let's play")
    accessAllCells().prop('disabled', false)
+   $('#game-board').show()
 }
 
 const accessCell = function (index) {
@@ -56,7 +57,7 @@ const drawGameBoard = function (cells) {
         accessCell(i).html(cells[i])
     }
     // $(`#message`).text("Let's play!")
-    $('#game-board').show()
+    // $('#game-board').show()
 }
 
 
@@ -109,14 +110,14 @@ const didAnyoneWin = function (lastPlayedCellIndex) {
 }
 
 const showTie =  function() {
- $(`#message`).html("It's a Tie!")
- $('#game-board').hide()
+    $(`#message`).html("Game Over - It's a Tie!")
+    accessAllCells().prop('disabled', true)
 //  alert("Tie Game")
 }
 
 const showWin =  function() {
- $(`#message`).text("Game Over")
-//  alert("Game Over")
+    $('#message').text('Game Over - ' + store.game.player + ' wins!') 
+    accessAllCells().prop('disabled', true)
 }
 
 // const updateCell = function (cellIndex) {
