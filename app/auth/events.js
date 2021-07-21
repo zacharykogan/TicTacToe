@@ -9,7 +9,7 @@ const onSignUp = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormfields(form)
-  api.signUp(data)  
+  api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
 }
@@ -28,9 +28,11 @@ const onSignIn = (event) => {
 }
 
 const onSignOut = function (event) {
-  api.signOut()
-    .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure)
+  if (confirm('Are you sure you want to quit?')) {
+    api.signOut()
+      .then(ui.signOutSuccess)
+      .catch(ui.signOutFailure)
+  }
 }
 
 module.exports = {

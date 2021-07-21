@@ -1,6 +1,6 @@
 let apiUrl
 const apiUrls = {
-  production: 'https://tic-tac-toe-api-production.herokuap',
+  production: 'https://tic-tac-toe-api-production.herokuap.com',
   development: 'https://tic-tac-toe-api-development.herokuapp.com'
 }
 
@@ -13,4 +13,4 @@ if (window.location.hostname === 'localhost') {
 module.exports = {
   apiUrl
 }
-//app/config.js
+// app/config.js
