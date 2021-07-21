@@ -28,9 +28,11 @@ const onSignIn = (event) => {
 }
 
 const onSignOut = function (event) {
-  api.signOut()
-    .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure)
+  if (confirm('Are you sure you want to quit?')) {
+    api.signOut()
+      .then(ui.signOutSuccess)
+      .catch(ui.signOutFailure)
+  }
 }
 
 module.exports = {
