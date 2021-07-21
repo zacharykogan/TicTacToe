@@ -43,9 +43,10 @@ const onPlay = function(event) {
   event.preventDefault()
 
   let cellIndex = $(event.target).data('cell-index')
+  console.log('onPlay cellIndex: ' + cellIndex)
   let tie = false
   let win = false
-  ui.accessCell(cellIndex).prop('disabled', true);
+  ui.accessCell(cellIndex).off('click');
   
   win = ui.didAnyoneWin(cellIndex)
   if (!win) {

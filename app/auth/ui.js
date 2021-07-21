@@ -1,6 +1,9 @@
 "use strict"
 
 const store = require('../store.js')
+const authEvents = require('./events')
+console.log('FUCK YOU ')
+console.log(authEvents)
 
 const signUpSuccess = function (data) {
     $('#message').text("You've signed up! Please sign in.");
@@ -37,19 +40,20 @@ const signOutSuccess = function (data) {
     $('#game-board').hide()
 }
 
-const newGameSuccess= function (data) {
+const newGameSuccess = function (data) {
    console.log('NewGameSuccess')
    $('#message').text("let's play")
-   accessAllCells().prop('disabled', false)
+   console.log(authEvents.onPlay)
+   accessAllCells().on('click', authEvents.onPlay)
    $('#game-board').show()
 }
 
 const accessCell = function (index) {
-    return $('#cell' + index + ' button')
+    return $('#cell' + index)
 }
 
 const accessAllCells = function() {
-    return $('div.cell button')
+    return $('div.box')
 }
 
 const drawGameBoard = function (cells) {
