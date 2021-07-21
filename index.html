@@ -5,41 +5,34 @@
       <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
       <h1>Tic Tac Toe</h1>
-      <br>
-<!-- add placeholders for each form field  -->
       <div class="new_user">
       <form id = "sign-up">
-        <label>Register</label>
+        <label></label>
         <input name="credentials[email]" type="text" placeholder = "email">
         <input name="credentials[password]" type="password" placeholder = "password">
         <input name="credentials[password_confirmation]" type="password" placeholder = "confirm password">
-        <input type="submit" value="Sign Up">
+        <input class="submit" type="submit" value="Sign Up">
       </form>
       </div>
-      <br>
       <div class="returning_user">
       <form id="sign-in">
-        <label>Sign In</label>
+        <label></label>
         <input name="credentials[email]" type="text" placeholder="email">
-        <input name="credentials[password]" type="password" placeholder="password">
-        <input type="submit" value="Sign In">
+        <input name="credentials[password]" type="password" placeholder="password"><br>
+        <input class="submit" type="submit" value="Sign In">
       </form>
     </div>
-    <p id="message"></p>
-      <br>
-    <div id="signed_in_user">
-      <button id="sign-out" type="button">Sign Out</button>
-      <br>
-      <br>
-    <button id="new-game">NEW GAME</button>
+    <div id="signed_in_user">                                                                     
+    <button id="new-game">NEW GAME</button>   <button id="sign-out" type="button">   QUIT   </button>
     </div>
-    <br/>
-    <br/>
+    <p id="message"></p>
     <!-- <section class='container'>
     <div id="game-board" class='row h-100 board'>
       <div class="cells-row ">
@@ -60,7 +53,7 @@
     </div>
     </div>  
     </section> -->
-
+<!-- THIS IS A COMMENT -->
     <!-- Add container fluid, so we can use the bootstrap grid -->
     <section id="game-board" class="container">
       <!--
