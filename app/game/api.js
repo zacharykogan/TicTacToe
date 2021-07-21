@@ -5,7 +5,7 @@ const store = require('../store')
 
 const newGame = function () {
   return $.ajax({
-    url: 'https://tic-tac-toe-api-production.herokuapp.com/games',
+    url: config.apiUrl+'/games',
     method: 'POST',
     headers: { Authorization: 'Bearer ' + store.user.token }
   })
@@ -14,7 +14,7 @@ const newGame = function () {
 const play = function (cellIndex, gameOver) {
   console.log('cellIndex = ' + cellIndex + ' gameOver = ' + gameOver)
   return $.ajax({
-    url: 'https://tic-tac-toe-api-production.herokuapp.com/games/' + store.game._id,
+    url: config.apiUrl+'/games/' + store.game._id,
     method: 'PATCH',
     headers: { Authorization: 'Bearer ' + store.user.token },
     data: {
