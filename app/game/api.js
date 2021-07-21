@@ -1,11 +1,11 @@
-"use strict"
+'use strict'
 
-const config = require("../config");
+const config = require('../config')
 const store = require('../store')
 
 const newGame = function () {
   return $.ajax({
-    url: config.apiUrl+'/games',
+    url: config.apiUrl + '/games',
     method: 'POST',
     headers: { Authorization: 'Bearer ' + store.user.token }
   })
@@ -14,16 +14,16 @@ const newGame = function () {
 const play = function (cellIndex, gameOver) {
   console.log('cellIndex = ' + cellIndex + ' gameOver = ' + gameOver)
   return $.ajax({
-    url: config.apiUrl+'/games/' + store.game._id,
+    url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
     headers: { Authorization: 'Bearer ' + store.user.token },
     data: {
-      'game': {
-        'cell': {
-          'index': cellIndex,
-          'value': store.game.player,
+      game: {
+        cell: {
+          index: cellIndex,
+          value: store.game.player
         },
-        'over': gameOver
+        over: gameOver
       }
     }
   })

@@ -1,6 +1,6 @@
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
-//.hide unatharized view
+// .hide unatharized view
 
 const authEvents = require('./auth/events')
 const gameEvents = require('./game/events')
@@ -9,13 +9,12 @@ const gameEvents = require('./game/events')
 // require('./example')
 
 $(() => {
-  $("#signed_in_user").hide();
+  $('#signed_in_user').hide()
   $('#game-board').hide()
-  $('#message').text('Sign Up or Sign In to Begin')
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#sign-out').on('click', authEvents.onSignOut)
-  
+
   $('#new-game').on('click', gameEvents.onNewGame)
   // ui.accessAllCells().on('click', authEvents.onPlay)
   // let currentPlayer = '✕'

@@ -1,14 +1,14 @@
-"use strict"
+'use strict'
 
 const store = require('../store')
 const game = require('./game')
 const ui = require('./ui')
 const api = require('./api')
 
-const onNewGame = function(event){
+const onNewGame = function (event) {
   event.preventDefault()
   api.newGame()
-    .then(function(data) {
+    .then(function (data) {
       ui.newGameSuccess()
       store.game = {
         _id: data.game._id,
@@ -20,24 +20,24 @@ const onNewGame = function(event){
     })
 }
 
-const onPlay = function(event) {
+const onPlay = function (event) {
   event.preventDefault()
 
-  let cellIndex = $(event.target).data('cell-index')
+  const cellIndex = $(event.target).data('cell-index')
   console.log('onPlay cellIndex: ' + cellIndex)
   let tie = false
   let win = false
-  ui.accessCell(cellIndex).off('click');
-  
+  ui.accessCell(cellIndex).off('click')
+
   win = game.didAnyoneWin(cellIndex)
   if (!win) {
     tie = game.isBoardFull(cellIndex)
   }
 
-  let gameOver = tie || win
+  const gameOver = tie || win
 
   api.play(cellIndex, gameOver)
-    .then(function(data) {
+    .then(function (data) {
       store.game.player = store.game.player === 'x' ? 'o' : 'x'
       ui.drawGameBoard(data.game.cells)
       console.log(data)
@@ -45,12 +45,11 @@ const onPlay = function(event) {
 
   if (win) {
     ui.showWin(store.game.player)
-  }
-  else if (tie) {
+  } else if (tie) {
     ui.showTie()
   }
-} 
+}
 
 module.exports = {
-    onNewGame
+  onNewGame
 }
