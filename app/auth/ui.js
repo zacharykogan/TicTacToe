@@ -1,7 +1,6 @@
 'use strict'
 
 const signUpSuccess = function (data) {
-  // $('#message').text("You've signed up! Please sign in.")
   $('form').trigger('reset')
   $('div.new_user').hide()
 }
