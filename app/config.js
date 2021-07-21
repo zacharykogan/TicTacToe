@@ -13,3 +13,4 @@ if (window.location.hostname === 'localhost') {
 module.exports = {
   apiUrl
 }
+//app/config.js

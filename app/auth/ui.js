@@ -25,7 +25,7 @@ const signInFailure = function (data) {
 }
 
 const signOutSuccess = function (data) {
-    $('#message').text("You've signed out.");
+    $('#message').text("Thanks For Playing!");
     $("div.new_user").show();
     $("#signed_in_user").show();
     $("div.returning_user").show();

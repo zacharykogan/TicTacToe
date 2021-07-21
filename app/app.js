@@ -11,7 +11,7 @@ const gameEvents = require('./game/events')
 $(() => {
   $("#signed_in_user").hide();
   $('#game-board').hide()
-  
+  $('#message').text('Sign Up or Sign In to Begin')
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#sign-out').on('click', authEvents.onSignOut)

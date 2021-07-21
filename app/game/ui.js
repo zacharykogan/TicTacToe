@@ -2,7 +2,7 @@
 
 const newGameSuccess = function (data) {
    console.log('NewGameSuccess')
-   $('#message').text("let's play")
+   $('#message').text("Let's Play!")
 //    accessAllCells().on('click', authEvents.onPlay)
    $('#game-board').show()
 }
