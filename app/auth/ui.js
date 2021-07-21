@@ -1,7 +1,6 @@
 'use strict'
 
 const signUpSuccess = function (data) {
-  $('#message').text("You've signed up! Please sign in.")
   $('form').trigger('reset')
   $('div.new_user').hide()
 }
@@ -12,7 +11,7 @@ const signUpFailure = function (data) {
 }
 
 const signInSuccess = function (data) {
-  $('#message').text("Click 'New Game' to play!")
+  $('#message').text(' ')
   $('div.new_user').hide()
   $('div.returning_user').hide()
   $('#signed_in_user').show()
@@ -21,7 +20,7 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (data) {
-  $('#message').text('Try again.')
+  $('#message').text('Oops! Check Email & Password')
 }
 
 const signOutSuccess = function (data) {
