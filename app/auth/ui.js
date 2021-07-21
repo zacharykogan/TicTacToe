@@ -40,14 +40,24 @@ const signOutSuccess = function (data) {
 const newGameSuccess= function (data) {
    console.log('NewGameSuccess')
    $('#message').text("let's play")
+   accessAllCells().prop('disabled', false)
+   $('#game-board').show()
+}
+
+const accessCell = function (index) {
+    return $('#cell' + index + ' button')
+}
+
+const accessAllCells = function() {
+    return $('div.cell button')
 }
 
 const drawGameBoard = function (cells) {
     for (let i = 0; i < cells.length; i++) {
-        $('#cell' + i + ' button').html(cells[i])
+        accessCell(i).html(cells[i])
     }
     // $(`#message`).text("Let's play!")
-    $('#game-board').show()
+    // $('#game-board').show()
 }
 
 
@@ -55,13 +65,13 @@ const drawGameBoard = function (cells) {
 
 const isWin = function (cellIndex1, cellIndex2) {
     console.log('cellIndex1 = ' + cellIndex1 + ' cellIndex2 = ' + cellIndex2 + ' player = ' + store.game.player)
-    return $('#cell' + cellIndex1 + ' button').html() === store.game.player && $('#cell' + cellIndex2 + ' button').html() === store.game.player;
+    return accessCell(cellIndex1).html() === store.game.player && accessCell(cellIndex2).html() === store.game.player;
     
 }
 
 const isBoardFull = function(lastPlayedCellIndex) {
     for (let i = 0; i < 9; i++) {
-        if (i !== lastPlayedCellIndex && $('#cell' + i + ' button').html() === '') {
+        if (i !== lastPlayedCellIndex && accessCell(i).html() === '') {
             return false
         }
     }
@@ -100,14 +110,14 @@ const didAnyoneWin = function (lastPlayedCellIndex) {
 }
 
 const showTie =  function() {
- $(`#message`).html("It's a Tie!")
- $('#game-board').hide()
+    $(`#message`).html("Game Over - It's a Tie!")
+    accessAllCells().prop('disabled', true)
 //  alert("Tie Game")
 }
 
 const showWin =  function() {
- $(`#message`).text("Game Over")
-//  alert("Game Over")
+    $('#message').text('Game Over - ' + store.game.player + ' wins!') 
+    accessAllCells().prop('disabled', true)
 }
 
 // const updateCell = function (cellIndex) {
@@ -125,5 +135,7 @@ module.exports = {
     isBoardFull,
     showTie,
     showWin,
-    newGameSuccess
+    newGameSuccess,
+    accessCell,
+    accessAllCells
 } 

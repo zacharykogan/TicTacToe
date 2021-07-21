@@ -45,10 +45,11 @@ const onPlay = function(event) {
   let cellIndex = $(event.target).data('cell-index')
   let tie = false
   let win = false
+  ui.accessCell(cellIndex).prop('disabled', true);
   
-  tie = ui.isBoardFull(cellIndex)
-  if (!tie) {
-    win = ui.didAnyoneWin(cellIndex)
+  win = ui.didAnyoneWin(cellIndex)
+  if (!win) {
+    tie = ui.isBoardFull(cellIndex)
   }
 
   let gameOver = tie || win
@@ -60,11 +61,11 @@ const onPlay = function(event) {
       console.log(data)
     })
 
-  if (tie) {
-    ui.showTie()
-  }
-  else if (win) {
+  if (win) {
     ui.showWin()
+  }
+  else if (tie) {
+    ui.showTie()
   }
 } 
 
