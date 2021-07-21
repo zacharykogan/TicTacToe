@@ -14,6 +14,7 @@ h1 {
   text-align: center;
   font-size: 100px;
   min-width: 620px;
+  max-height: 10%;
 }
 input{
   width: 25%;
@@ -73,15 +74,16 @@ button {
 }
 
 .container {
-  height: 100vh;
+  height: 75vh;
   cursor: crosshair;
   color: rgb(236, 44, 208);
+  max-height: 50%;
 }
 
 .board {
   margin: auto;
-  max-height: calc(100vh - 75px);
-  max-width: calc(100vh - 75px);
+  max-height: calc(75vh - 75px);
+  max-width: calc(75vh - 75px);
   background: url('https://static.vecteezy.com/system/resources/thumbnails/000/245/981/small_2x/mountain-sunset-landscape-first-person-view-vector.jpg') no-repeat center center;
   background-size: cover;
 }

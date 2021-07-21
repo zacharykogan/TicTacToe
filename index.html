@@ -30,44 +30,11 @@
       </form>
     </div>
     <div id="signed_in_user">                                                                     
-    <button id="new-game">NEW GAME</button>   <button id="sign-out" type="button">   QUIT   </button>
-    </div>
-    <p id="message"></p>
-    <!-- <section class='container'>
-    <div id="game-board" class='row h-100 board'>
-      <div class="cells-row ">
-        <div id="cell0" class="cell col-4 box" data-cell-index="0"></div>
-        <div id="cell1" class="cell col-4 box" data-cell-index="1"></div>
-        <div id="cell2" class="cell col-4 box" data-cell-index="2"></div> 
-      </div>
-      <div class="cells-row">
-        <div id="cell3" class="cell col-4 box" data-cell-index="3"></div>
-        <div id="cell4" class="cell col-4 box" data-cell-index="4"></div>
-        <div id="cell5" class="cell col-4 box" data-cell-index="5"></div> 
-      </div>
-      <div class="cells-row">
-        <div id="cell6" class="cell col-4 box" data-cell-index="6"></div>
-        <div id="cell7" class="cell col-4 box" data-cell-index="7"></div>
-        <div id="cell8" class="cell col-4 box" data-cell-index="8"></div>
-      </div>
-    </div>
-    </div>  
-    </section> -->
-<!-- THIS IS A COMMENT -->
-    <!-- Add container fluid, so we can use the bootstrap grid -->
+      <button id="new-game">NEW GAME</button> 
+      <p id="message"></p>
     <section id="game-board" class="container">
-      <!--
-      A bootstrap container must have at least one `row`
-      To set the row's height to be 100% of its parent's height we add
-      the bootstrap class `h-100`
-      We also add the `board` class to apply styling.
-      -->
       <div class="row h-100 board">
-        <!--
-        We want 3 columns. Since bootstrap is a 12 column grid, we set the column
-        width to `4`, because 12 / 3 columns = 4 width.
-        We also add a `box` class to style these divs.
-        -->
+
         <div id="cell0" class="col-4 box" data-cell-index="0"></div>
         <div id="cell1" class="col-4 box" data-cell-index="1"></div>
         <div id="cell2" class="col-4 box" data-cell-index="2"></div>
@@ -81,6 +48,7 @@
         <div id="cell8" class="col-4 box" data-cell-index="8"></div>
       </div>
     </section>
+     <button id="sign-out" type="button">   QUIT   </button>
   </body>
 
 </html>
