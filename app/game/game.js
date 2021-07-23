@@ -3,7 +3,7 @@
 const store = require('../store')
 const ui = require('./ui')
 
-// This function returns whether the given indexes inside the board make a win together with the previous move
+// returns whether the given indexes inside the board add up to a win
 const isWin = function (cellIndex1, cellIndex2) {
   console.log('cellIndex1 = ' + cellIndex1 + ' cellIndex2 = ' + cellIndex2 + ' player = ' + store.game.player)
   return ui.accessCell(cellIndex1).html() === store.game.player && ui.accessCell(cellIndex2).html() === store.game.player
@@ -17,7 +17,7 @@ const isBoardFull = function (lastPlayedCellIndex) {
   }
   return true
 }
-
+// checks last move for win
 const didAnyoneWin = function (lastPlayedCellIndex) {
   if (lastPlayedCellIndex === 0) {
     return isWin(1, 2) || isWin(3, 6) || isWin(4, 8)

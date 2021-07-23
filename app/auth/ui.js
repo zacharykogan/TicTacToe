@@ -1,4 +1,5 @@
 'use strict'
+const store = require('../store')
 
 const signUpSuccess = function (data) {
   $('form').trigger('reset')
@@ -31,6 +32,7 @@ const signOutSuccess = function (data) {
   $('div.returning_user').show()
   $('#signed_in_user').hide()
   $('#game-board').hide()
+  store.game.over = true
 }
 
 module.exports = {

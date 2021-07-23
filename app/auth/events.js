@@ -27,7 +27,7 @@ const onSignIn = (event) => {
     .catch(ui.signInFailure)
 }
 
-const onSignOut = function (event) {
+const onSignOut = function () {
   if (confirm('Are you sure you want to quit?')) {
     api.signOut()
       .then(ui.signOutSuccess)

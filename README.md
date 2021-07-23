@@ -1,5 +1,5 @@
 
-TIC TAC TOE by Zachary Kogan
+TIC TAC TOE
 
 
 Welcome to Tic Tac Toe
