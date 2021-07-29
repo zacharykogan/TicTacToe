@@ -32,6 +32,7 @@ const onSignOut = function (event) {
     api.signOut()
       .then(ui.signOutSuccess)
       .catch(ui.signOutFailure)
+    store.game.over = true
   }
 }
 
