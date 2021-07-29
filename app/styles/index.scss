@@ -5,6 +5,8 @@ body {
   background-color: rgba(106,173,181,255);
   color: brown;
   text-align: center;
+  width: 90%;
+  max-height: 50% vh;
 }
 h1 {
   color: rgb(236, 44, 208);
@@ -58,6 +60,7 @@ p {
   font-family: Goldman;
   min-width: 620px;
 }
+
 button {
   background-color: rgba(87,160,164,255);
   border: 2px solid #rgb(236, 44, 208);
@@ -90,8 +93,8 @@ button {
 
 .box {
   color: rgb(236, 44, 208);
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
+  border-bottom: 2px solid rgba(106,173,181,255);
+  border-right: 2px solid rgba(106,173,181,255);
   display: flex;
   justify-content: center;
   align-items: center;

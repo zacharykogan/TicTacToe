@@ -3,6 +3,7 @@
 const signUpSuccess = function (data) {
   $('form').trigger('reset')
   $('div.new_user').hide()
+  $('#message').text(' ')
 }
 
 const signUpFailure = function (data) {

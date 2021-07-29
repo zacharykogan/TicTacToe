@@ -7,17 +7,21 @@ const api = require('./api')
 
 const onNewGame = function (event) {
   event.preventDefault()
-  api.newGame()
-    .then(function (data) {
-      ui.newGameSuccess()
-      store.game = {
-        _id: data.game._id,
-        player: 'x'
-      }
-      ui.drawGameBoard(data.game.cells)
-      ui.accessAllCells().on('click', onPlay)
-      console.log(data)
-    })
+  const gameOver = store.game === undefined || store.game.over
+  if (gameOver || confirm('You are in the middle of a game - are you sure you want to restart?')) {
+    api.newGame()
+      .then(function (data) {
+        ui.newGameSuccess()
+        store.game = {
+          _id: data.game._id,
+          player: 'x',
+          over: false
+        }
+        ui.drawGameBoard(data.game.cells)
+        ui.accessAllCells().on('click', onPlay)
+        console.log(data)
+      })
+  }
 }
 
 const onPlay = function (event) {
@@ -47,6 +51,10 @@ const onPlay = function (event) {
     ui.showWin(store.game.player)
   } else if (tie) {
     ui.showTie()
+  }
+
+  if (win || tie) {
+    store.game.over = true
   }
 }
 
