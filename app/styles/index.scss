@@ -1,0 +1,114 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap');
+
+body {
+  background-color: rgba(106,173,181,255);
+  color: brown;
+  text-align: center;
+  width: 90%;
+  max-height: 50% vh;
+}
+h1 {
+  color: rgb(236, 44, 208);
+  cursor:  default;
+  font-family: Goldman;
+  width: 100%;
+  text-align: center;
+  font-size: 100px;
+  min-width: 620px;
+  max-height: 10%;
+}
+input{
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+// p {
+//   color: black;
+//   cursor:  default;
+// }
+form{
+  color: rgb(236, 44, 208);
+  background-blend-mode: darken;
+  align: center;
+  font-family: Goldman;
+  min-width: 620px;
+}
+
+p {
+  color: rgb(236, 44, 208);
+  font-size: 55px;
+  font-style: bold;
+  border: 5px;
+  padding: 15px 32px;
+  cursor: default;
+  font-family: Goldman;
+  min-width: 620px;
+}
+.submit {
+  background-color: rgba(87,160,164,255);
+  border: 2px solid #rgb(236, 44, 208);
+  color: rgb(236, 44, 208);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: bold;
+  display: inline-block;
+  font-size: 30px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 20%;
+  font-family: Goldman;
+  min-width: 620px;
+}
+
+button {
+  background-color: rgba(87,160,164,255);
+  border: 2px solid #rgb(236, 44, 208);
+  color: rgb(236, 44, 208);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: bold;
+  display: inline-block;
+  font-size: 30px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 20%;
+  font-family: Goldman;
+  min-width: 620px;
+}
+
+.container {
+  height: 75vh;
+  cursor: crosshair;
+  color: rgb(236, 44, 208);
+  max-height: 50%;
+}
+
+.board {
+  margin: auto;
+  max-height: calc(75vh - 75px);
+  max-width: calc(75vh - 75px);
+  background: url('https://static.vecteezy.com/system/resources/thumbnails/000/245/981/small_2x/mountain-sunset-landscape-first-person-view-vector.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.box {
+  color: rgb(236, 44, 208);
+  border-bottom: 2px solid rgba(106,173,181,255);
+  border-right: 2px solid rgba(106,173,181,255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100% / 3);
+  text-shadow: 2px 2px rgba(0 , 0, 0, .25);
+  font-size: 15vh;
+  user-select: none;
+  &:nth-child(3n) {
+    border-right: 0;
+  }
+  &:nth-last-child(-1n + 3) {
+    border-bottom: 0;
+  }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
