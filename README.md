@@ -32,4 +32,4 @@ Zach
 
 Wire frame:
 
-![Image of Sketch](../tic-tac-toe-client/public/Drawing.jpeg)
+![Image of Yaktocat](https://i.ibb.co/5BQfVWB/Drawing.jpg)
