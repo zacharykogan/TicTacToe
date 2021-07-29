@@ -1,6 +1,8 @@
 
 TIC TAC TOE by Zachary Kogan
 
+https://zacharykogan.github.io/tic-tac-toe-client/
+
 
 Welcome to Tic Tac Toe
 
@@ -25,3 +27,8 @@ When there are no more squares remaining and there is no winner the game results
 Enjoy!
 
 Zach
+
+
+Wire frame:
+
+![Image of Sketch](../tic-tac-toe-client/public/Drawing.jpeg)
