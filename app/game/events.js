@@ -6,9 +6,8 @@ const ui = require('./ui')
 const api = require('./api')
 
 const onNewGame = function (event) {
-  event.preventDefault()
   const gameOver = store.game === undefined || store.game.over
-  if (gameOver || confirm('You are in the middle of a game - are you sure you want to restart?')) {
+  if (gameOver || confirm('You are in the middle of a game. Are you sure you want to restart?')) {
     api.newGame()
       .then(function (data) {
         ui.newGameSuccess()
